@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+#SBATCH --job-name=generate_seq
+#SBATCH --partition=vulcan_c24
+#SBATCH --account=vulcan
+#SBATCH --qos=normal
+#SBATCH --nodes=1
+#SBATCH --ntasks=24
+#SBATCH --time=50:00:00
+#SBATCH --export=ALL
+
+module load python numpy 
+
+python generate_sequences.py -L 18 -Q 10000000 -k 4 -d 1.0 -o 0 > seq18k10m.dat &
+
+python generate_sequences.py -L 18 -Q 100000000 -k 4 -d 1.0 -o 0 > seq18k100m.dat  &
+
+python generate_sequences.py -L 18 -Q 1000000000 -k 4 -d 1.0 -o 0 > seq18k1000m.dat  &
+
+python generate_sequences.py -L 23 -Q 10000000 -k 4 -d 1.0 -o 0  > seq23k10m.dat &
+
+python generate_sequences.py -L 23 -Q 100000000 -k 4 -d 1.0 -o 0  > seq23k100m.dat &
+
+python generate_sequences.py -L 23 -Q 1000000000 -k 4 -d 1.0 -o 0  > seq23k1000m.dat  &
+
+wait

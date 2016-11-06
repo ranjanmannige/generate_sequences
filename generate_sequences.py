@@ -2,6 +2,9 @@
 __author__ = 'Ranjan V. Mannige'
 
 # To do:
+#python generate_sequences.py -L 18 -Q 10000000 -k 4 -d 1.0 -o 0
+#python generate_sequences.py -L 18 -Q 100000000 -k 4 -d 1.0 -o 0
+#python generate_sequences.py -L 18 -Q 1000000000 -k 4 -d 1.0 -o 0
 #python generate_sequences.py -L 23 -Q 10000000 -k 4 -d 1.0 -o 0
 #python generate_sequences.py -L 23 -Q 100000000 -k 4 -d 1.0 -o 0
 #python generate_sequences.py -L 23 -Q 1000000000 -k 4 -d 1.0 -o 0
