@@ -49,14 +49,14 @@ first if there is not use of -d of --distribution_thickness. But the second
 curve would range between -1/2*std and 1/2*std if -d 1 is provided (see below).
 
 ### Script command line options 
-**-Q**: is the number of DNA bricks/subunits.
-**-k**: is the number of sticky patches per block (coordination).
-**-L**: is the length (in nucleotides) of DNA to be used as sticky patches.
-**--disallow_triplets**: when 1, will not use any sequences with "AAA", "TTT", "GGG", "CCC" in them.
-**--distribution_thickness**: (in units of KbT or energy) is the allowed range of sequence energy.
+- **-Q**: is the number of DNA bricks/subunits.
+- **-k**: is the number of sticky patches per block (coordination).
+- **-L**: is the length (in nucleotides) of DNA to be used as sticky patches.
+- **--disallow_triplets**: when 1, will not use any sequences with "AAA", "TTT", "GGG", "CCC" in them.
+- **--distribution_thickness**: (in units of KbT or energy) is the allowed range of sequence energy.
 if set to 0 or negative, then sequences from the entire sequence distribution will 
 be selected; then "offset_from_average" (below) will effectively be 0.
-**--offset_from_average**: (in standard deviation) is a little more involved:
+- **--offset_from_average**: (in standard deviation) is a little more involved:
 This feature allows you to choose the average energies that are offset (in units of standard 
  deviations) from the average energy. So, "offset_from_average=-1" will mean that we expect to
  select sequences close to A - S<offset_from_average> in KbT, where A and S are the average and 
