@@ -22,11 +22,35 @@ energies are distributed, We have introduced a user input "distribution_thicknes
 which controls how tightly distributed the energies of the set of sequences are (if 
 distribution_thickness>0).
 
-## SETUP
-Assume that you want $Q$ number of distinct DNA bricks to that are 
+## Script command line options 
+
+- **-Q**: is the number of DNA bricks/subunits.
+- **-k**: is the number of sticky patches per block (coordination).
+- **-L**: is the length (in nucleotides) of DNA to be used as sticky patches.
+- **--disallow_triplets**: when 1, will not use any sequences with "AAA", "TTT", "GGG", "CCC" in them.
+- **--distribution_thickness**: (in units of KbT or energy) is the allowed range of sequence energy.
+if set to 0 or negative, then sequences from the entire sequence distribution will 
+be selected; then "offset_from_average" (below) will effectively be 0.
+- **--offset_from_average**: (in standard deviation) is a little more involved:
+This feature allows you to choose the average energies that are offset (in units of standard 
+ deviations) from the average energy. So, "offset_from_average=-1" will mean that we expect to
+ select sequences close to A - S<offset_from_average> in KbT, where A and S are the average and 
+ standard deviations of the energies in KbT (the allowed energies will then be 
+ A - S<offset_from_average>  +/- "distribution_thickness"/2; see above. A warning will be 
+ raised if there are not enough sequences available within that range in a combinatorial
+ sense).
+
+## Example run
+
+Assume that you want $Q=18$ number of distinct DNA bricks that are 
 expected to form a specific assembly. Assume that on average each DNA
-brick interacts with $k$ other neighbors. Assume that the "sticky" regions 
-of the DNA are of length $L$.
+brick interacts with $k=4$ other neighbors. Assume that the "sticky" regions 
+of the DNA are of length $L=18$. Then, to get the set of possible sticky 
+DNA patches you would need to run:
+
+```sh
+> python generate_sequences.py -L 18 -Q 18 -k 4
+```
 
 ALL RESULTS ARE OUTPUTTED IN THE DIRECTORY ./sequences/L/
 For any successful run invluving L=<L>,Q=<Q>,and k=<k>, the following files 
@@ -46,22 +70,4 @@ by the user options. E.g., the second histogram would look exactly like the
 first if there is not use of -d of --distribution_thickness. But the second 
 curve would range between -1/2*std and 1/2*std if -d 1 is provided (see below).
 
-### Script command line options 
-- **-Q**: is the number of DNA bricks/subunits.
-- **-k**: is the number of sticky patches per block (coordination).
-- **-L**: is the length (in nucleotides) of DNA to be used as sticky patches.
-- **--disallow_triplets**: when 1, will not use any sequences with "AAA", "TTT", "GGG", "CCC" in them.
-- **--distribution_thickness**: (in units of KbT or energy) is the allowed range of sequence energy.
-if set to 0 or negative, then sequences from the entire sequence distribution will 
-be selected; then "offset_from_average" (below) will effectively be 0.
-- **--offset_from_average**: (in standard deviation) is a little more involved:
-This feature allows you to choose the average energies that are offset (in units of standard 
- deviations) from the average energy. So, "offset_from_average=-1" will mean that we expect to
- select sequences close to A - S<offset_from_average> in KbT, where A and S are the average and 
- standard deviations of the energies in KbT (the allowed energies will then be 
- A - S<offset_from_average>  +/- "distribution_thickness"/2; see above. A warning will be 
- raised if there are not enough sequences available within that range in a combinatorial
- sense).
-
 TESTED IN PYTHON 2.7. Please email ranjanmannige@gmail.com for any bugs.
-
