@@ -10,10 +10,12 @@
                                                          |_| v 1.0.beta
 
 </pre>
+<img width="2382" height="610" alt="A portion of the our Soft Matter journal cover, which featured our paper on DNA-bricks" src="https://github.com/user-attachments/assets/a57c6d4b-de60-4da8-938d-a107584bf912" />
+
 
 **Code that accompanys the publication:**
 Hedges LO, Mannige RV, Whitelam S* (2014) Growth of equilibrium structures built from a 
-large number of distinct component types.Soft Matter (2014) 10(34):6404 |  [Link](http://pubs.rsc.org/en/content/articlehtml/2014/sm/c4sm01021c)] |  [PDF](https://www.multiscaleinstitute.com/ranjan/papers/Hedges2014.pdf). See Fig 10.
+large number of distinct component types.Soft Matter (2014) 10(34):6404 |  [Link](http://pubs.rsc.org/en/content/articlehtml/2014/sm/c4sm01021c)] |  [PDF](https://www.multiscaleinstitute.com/ranjan/papers/Hedges2014.pdf) | See Fig 10.
 
 This script generates a "master set" of DNA sequences to be used as sticky 
 patches within a DNA brick assembly of size $Q$. As the faithful formation of
