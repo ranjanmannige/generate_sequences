@@ -13,9 +13,7 @@
 
 **Code that accompany's the publication:**
 Hedges LO, Mannige RV, Whitelam S* (2014) Growth of equilibrium structures built from a 
-large number of distinct component types.Soft Matter (2014) 10(34):6404 |  
-[Link](http://pubs.rsc.org/en/content/articlehtml/2014/sm/c4sm01021c)] |  
-[PDF](https://www.multiscaleinstitute.com/ranjan/papers/Hedges2014.pdf).
+large number of distinct component types.Soft Matter (2014) 10(34):6404 |  [Link](http://pubs.rsc.org/en/content/articlehtml/2014/sm/c4sm01021c)] |  [PDF](https://www.multiscaleinstitute.com/ranjan/papers/Hedges2014.pdf).
 
 This script generates a "master set" of DNA sequences to be used as sticky 
 patches within a DNA brick assembly of size $Q$. As the faithful formation of
